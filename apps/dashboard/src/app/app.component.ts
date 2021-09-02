@@ -14,7 +14,6 @@ import { UserService } from '@ng-mfe/shared/data-access-user';
     </div>
     <ng-template #signIn><router-outlet></router-outlet></ng-template>
   `,
-  styles: [``],
 })
 export class AppComponent implements OnInit {
   isLoggedIn$ = this.userService.isUserLoggedIn$;
