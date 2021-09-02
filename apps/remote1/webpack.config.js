@@ -5,12 +5,11 @@ const path = require('path');
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   /* mapped paths to share */
-  '@ng-mfe/shared/data-access-user',
 ]);
 
 module.exports = {
   output: {
-    uniqueName: 'dashboard',
+    uniqueName: 'remote1',
     publicPath: 'auto',
   },
   optimization: {
@@ -24,9 +23,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {
-        login: 'login@http://localhost:4201/remoteEntry.js',
-        remote1: 'remote1@http://localhost:4202/remoteEntry.js',
+      name: 'remote1',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Module': 'apps/remote1/src/app/remote-entry/entry.module.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

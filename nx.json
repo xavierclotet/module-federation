@@ -41,6 +41,13 @@
       "tags": [],
       "implicitDependencies": ["login"]
     },
+    "remote1": {
+      "tags": []
+    },
+    "remote1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["remote1"]
+    },
     "shared-data-access-user": {
       "tags": []
     }

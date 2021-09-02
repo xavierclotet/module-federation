@@ -8,6 +8,11 @@ import { UserService } from '@ng-mfe/shared/data-access-user';
   selector: 'ng-mfe-root',
   template: `
     <div class="dashboard-nav">Admin Dashboard</div>
+    <ul>
+      <li><a routerLink="remote1">Remote 1</a></li>
+      <li> <a routerLink="login">Login</a></li>
+    </ul>
+
     <div *ngIf="isLoggedIn$ | async; else signIn">
       You are authenticated so you can see this content.
       <button (click)="logout()">Logout</button>
