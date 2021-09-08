@@ -5,6 +5,7 @@ const path = require('path');
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, '../../tsconfig.base.json'), [
   /* mapped paths to share */
+  '@ng-mfe/shared/data-access-user',
 ]);
 
 module.exports = {

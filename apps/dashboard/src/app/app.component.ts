@@ -13,11 +13,14 @@ import { UserService } from '@ng-mfe/shared/data-access-user';
       <li> <a routerLink="login">Login</a></li>
     </ul>
 
-    <div *ngIf="isLoggedIn$ | async; else signIn">
+    <div *ngIf="isLoggedIn$ | async">
       You are authenticated so you can see this content.
       <button (click)="logout()">Logout</button>
     </div>
-    <ng-template #signIn><router-outlet></router-outlet></ng-template>
+    <!-- <ng-template #signIn>
+
+    </ng-template> -->
+    <router-outlet></router-outlet>
   `,
 })
 export class AppComponent implements OnInit {

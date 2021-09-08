@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-
+import { UserService } from '@ng-mfe/shared/data-access-user';
 @Component({
   selector: 'ng-mfe-remote1-entry',
   template: `<div class="remote-entry">
-    <h2>remote1's Remote Entry Component</h2>
-  </div>`,
+    <h2>Remote 1 remote Entry Component</h2>
+  </div>
+  loggedIn? {{ isLoggedIn$ | async }}
+  `,
   styles: [
     `
       .remote-entry {
@@ -15,4 +17,7 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  isLoggedIn$ = this.userService.isUserLoggedIn$;
+  constructor(private userService: UserService) { }
+}
